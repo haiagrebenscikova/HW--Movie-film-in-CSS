@@ -1,0 +1,57 @@
+body {
+    background-image: url(img.png);
+    --size:40vh;
+}
+.movies {
+    width: var(--size);
+    height: var(--size);
+    position: relative;
+    background-color: rgb(18, 18, 24);
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-top: /*calc( (100vh-var(--size))/2 );*/ 28vh;
+    margin-left: calc(((100vw/3)-var(--size))/2);
+    box-shadow: 5px 5px 5px black, 5px 5px 5px black;
+}
+.movies .film {
+    background-color:rgb(18, 18, 24);
+    height: calc( var(--size)*0.75 );
+    position: absolute;
+    width: 110vw;
+    margin-left: -20vw;
+    margin-top: 4vh;
+    border: 10px solid rgb(18, 18, 24);
+    border-image: radial-gradient(circle, white, transparent); 
+    box-shadow: 5px 5px 5px black;
+}
+.movies img {
+    height: inherit;
+    width: calc( var(--size)*0.98*0.75 );
+    padding-left: 5px;
+    padding-right: 5px;   
+}
+.movies .controls {
+    background-color: rgb(29, 29, 39);
+    border: 1px solid black;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: calc( var(--size)*0.8);
+    width: calc( var(--size)*0.8);
+    opacity: 0.7;
+    box-shadow: 5px 5px 5px black;
+}
+.movies button {
+    background-color: white;
+    border-radius: 20%;
+    transform: translateY(14vh)
+                translateX(6vw);  
+}
+.movies svg {
+    fill: black;
+    vertical-align: middle;
+}
