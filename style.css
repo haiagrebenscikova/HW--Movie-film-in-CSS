@@ -1,37 +1,51 @@
 body {
-    background-image: url(img.png);
-    --size:40vh;
+    background-image:radial-gradient(transparent , black), url(bg.jpg);
+    background-size: cover;
+    --size: 40vh;
+    --count: 7;
+    --top-marker: calc( var(--size) * 0.05 * 0.75);
+    --bottom-marker:  calc( var(--size) * 0.95 * 0.75 );
 }
 .movies {
     width: var(--size);
     height: var(--size);
     position: relative;
-    background-color: rgb(18, 18, 24);
+    background-color: #222;
     border: 1px solid black;
     border-radius: 50%;
     margin-top: /*calc( (100vh-var(--size))/2 );*/ 28vh;
     margin-left: calc(((100vw/3)-var(--size))/2);
-    box-shadow: 5px 5px 5px black, 5px 5px 5px black;
+    filter: drop-shadow(2px 2px 6px black);
 }
 .movies .film {
-    background-color:rgb(18, 18, 24);
-    height: calc( var(--size)*0.75 );
+    height: calc(var(--size) * 0.75);
     position: absolute;
-    width: 110vw;
+    width:calc( var(--count) * var(--size) * 0.90 * 0.77 * 4/3 + 1vh );
     margin-left: -20vw;
     margin-top: 4vh;
-    border: 10px solid rgb(18, 18, 24);
-    border-image: radial-gradient(circle, white, transparent); 
     box-shadow: 5px 5px 5px black;
+    background-image:linear-gradient(transparent, transparent var(--top-marker), #222 var(--top-marker), #222 var(--bottom-marker), transparent var(--bottom-marker)),
+                    radial-gradient(transparent 50%, #222 50%),
+                    radial-gradient(transparent 50%, #222 50%);
+    background-size: cover,
+                    var(--top-marker) var(--top-marker),
+                    var(--top-marker) var(--top-marker);
+    background-repeat: repeat, 
+                    repeat-x,
+                    repeat-x;
+    background-position: top left,
+                        top left,
+                        bottom left;
+    filter: drop-shadow(2px 2px 6px black);
 }
 .movies img {
-    height: inherit;
-    width: calc( var(--size)*0.98*0.75 );
-    padding-left: 5px;
-    padding-right: 5px;   
+    height: calc( var(--size) * 0.90 * 0.75 );
+    margin: 0 0.5vh;
+    position: relative;
+    top: calc( var(--size) * 0.05 * 0.75); 
 }
 .movies .controls {
-    background-color: rgb(29, 29, 39);
+    background-color: #222;
     border: 1px solid black;
     border-radius: 50%;
     position: absolute;
@@ -43,12 +57,13 @@ body {
     height: calc( var(--size)*0.8);
     width: calc( var(--size)*0.8);
     opacity: 0.7;
-    box-shadow: 5px 5px 5px black;
+    background-image: radial-gradient(black, transparent);
+    filter: drop-shadow(2px 2px 6px black);
 }
 .movies button {
     background-color: white;
     border-radius: 20%;
-    transform: translateY(14vh)
+    transform: translateY(13vh)
                 translateX(6vw);  
 }
 .movies svg {
